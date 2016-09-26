@@ -1,0 +1,37 @@
+.header-bar {
+  color: #164038;
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  border-bottom: 1px solid #164038;
+  margin-bottom: 8px;
+}
+
+.title-text {
+  font-size: 86px;
+  text-align: left;
+}
+
+.tag-text {
+  position: absolute;
+  right: 9px;
+  bottom: 19px;
+  text-align: right;
+  font-size: 16px;
+}
+
+@media (max-width: 960px) {
+  .tag-text {
+    text-align: left;
+  }
+
+  .title-text {
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 500px) {
+  .tag-text {
+    text-align: right;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,26 @@
+.game-dash {
+  z-index: 101;
+  height: 25%;
+  position: relative;
+}
+
+.game-dash > .row-12 {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 960px) {
+  .mob-bottom-btn {
+    position: fixed;
+    bottom: 20px;
+  }
+
+  .mob-bottom-btn:empty {
+    position: fixed;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+  }
+}

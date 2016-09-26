@@ -1,0 +1,35 @@
+.play-area {
+  height: 50%;
+  position: relative;
+}
+
+.card-display {
+  position: relative;
+  width: 100%;
+}
+
+.card-display.computer {
+  position: absolute;
+  top: calc(33% - 40px);
+  z-index: 105;
+  margin-left: calc(33% - 40px);
+}
+
+.card-display.user {
+  position: absolute;
+  top: calc(66% - 40px);
+  z-index: 105;
+  right: calc(33% - 40px);
+}
+
+.card-display.user > div {
+  float: right;
+}
+
+.extra-card {
+  height: 40px;
+  width: 40px;
+  background-color: #ECF3FF;
+  border-radius: 50%;
+  float: left;
+}

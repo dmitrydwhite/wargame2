@@ -1,0 +1,337 @@
+.App {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.play-space {
+  height: 75vh;
+  background-color: #556AD3;
+  position: relative;
+  overflow: hidden;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 960px) {
+  .play-space {
+    width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.enemy_bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: top 0.5s;
+}
+
+.enemy-has-0 {
+  top: calc(-996px + (75vh / 2));
+}
+
+.enemy-has-1 {
+  top: calc(-990px + (75vh / 2));
+}
+
+.enemy-has-2 {
+  top: calc(-984px + (75vh / 2));
+}
+
+.enemy-has-3 {
+  top: calc(-978px + (75vh / 2));
+}
+
+.enemy-has-4 {
+  top: calc(-972px + (75vh / 2));
+}
+
+.enemy-has-5 {
+  top: calc(-966px + (75vh / 2));
+}
+
+.enemy-has-6 {
+  top: calc(-960px + (75vh / 2));
+}
+
+.enemy-has-7 {
+  top: calc(-954px + (75vh / 2));
+}
+
+.enemy-has-8 {
+  top: calc(-948px + (75vh / 2));
+}
+
+.enemy-has-9 {
+  top: calc(-942px + (75vh / 2));
+}
+
+.enemy-has-10 {
+  top: calc(-936px + (75vh / 2));
+}
+
+.enemy-has-11 {
+  top: calc(-930px + (75vh / 2));
+}
+
+.enemy-has-12 {
+  top: calc(-924px + (75vh / 2));
+}
+
+.enemy-has-13 {
+  top: calc(-918px + (75vh / 2));
+}
+
+.enemy-has-14 {
+  top: calc(-912px + (75vh / 2));
+}
+
+.enemy-has-15 {
+  top: calc(-906px + (75vh / 2));
+}
+
+.enemy-has-16 {
+  top: calc(-900px + (75vh / 2));
+}
+
+.enemy-has-17 {
+  top: calc(-894px + (75vh / 2));
+}
+
+.enemy-has-18 {
+  top: calc(-888px + (75vh / 2));
+}
+
+.enemy-has-19 {
+  top: calc(-882px + (75vh / 2));
+}
+
+.enemy-has-20 {
+  top: calc(-876px + (75vh / 2));
+}
+
+.enemy-has-21 {
+  top: calc(-870px + (75vh / 2));
+}
+
+.enemy-has-22 {
+  top: calc(-864px + (75vh / 2));
+}
+
+.enemy-has-23 {
+  top: calc(-858px + (75vh / 2));
+}
+
+.enemy-has-24 {
+  top: calc(-852px + (75vh / 2));
+}
+
+.enemy-has-25 {
+  top: calc(-846px + (75vh / 2));
+}
+
+.enemy-has-26 {
+  top: calc(-840px + (75vh / 2));
+}
+
+.enemy-has-27 {
+  top: calc(-834px + (75vh / 2));
+}
+
+.enemy-has-28 {
+  top: calc(-828px + (75vh / 2));
+}
+
+.enemy-has-29 {
+  top: calc(-822px + (75vh / 2));
+}
+
+.enemy-has-30 {
+  top: calc(-816px + (75vh / 2));
+}
+
+.enemy-has-31 {
+  top: calc(-810px + (75vh / 2));
+}
+
+.enemy-has-32 {
+  top: calc(-804px + (75vh / 2));
+}
+
+.enemy-has-33 {
+  top: calc(-798px + (75vh / 2));
+}
+
+.enemy-has-34 {
+  top: calc(-792px + (75vh / 2));
+}
+
+.enemy-has-35 {
+  top: calc(-786px + (75vh / 2));
+}
+
+.enemy-has-36 {
+  top: calc(-780px + (75vh / 2));
+}
+
+.enemy-has-37 {
+  top: calc(-774px + (75vh / 2));
+}
+
+.enemy-has-38 {
+  top: calc(-768px + (75vh / 2));
+}
+
+.enemy-has-39 {
+  top: calc(-762px + (75vh / 2));
+}
+
+.enemy-has-40 {
+  top: calc(-756px + (75vh / 2));
+}
+
+.enemy-has-41 {
+  top: calc(-750px + (75vh / 2));
+}
+
+.enemy-has-42 {
+  top: calc(-744px + (75vh / 2));
+}
+
+.enemy-has-43 {
+  top: calc(-738px + (75vh / 2));
+}
+
+.enemy-has-44 {
+  top: calc(-732px + (75vh / 2));
+}
+
+.enemy-has-45 {
+  top: calc(-726px + (75vh / 2));
+}
+
+.enemy-has-46 {
+  top: calc(-720px + (75vh / 2));
+}
+
+.enemy-has-47 {
+  top: calc(-714px + (75vh / 2));
+}
+
+.enemy-has-48 {
+  top: calc(-708px + (75vh / 2));
+}
+
+.enemy-has-49 {
+  top: calc(-702px + (75vh / 2));
+}
+
+.enemy-has-50 {
+  top: calc(-696px + (75vh / 2));
+}
+
+.enemy-has-51 {
+  top: calc(-690px + (75vh / 2));
+}
+
+.enemy-has-52 {
+  top: calc(-684px + (75vh / 2));
+}
+
+
+
+.row-12 {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  min-height: 1px;
+}
+
+.column-1,
+.column-2,
+.column-3,
+.column-4,
+.column-5,
+.column-6,
+.column-7,
+.column-8,
+.column-9,
+.column-10,
+.column-11,
+.column-12 {
+  float: left;
+  min-height: 1px;
+}
+
+.column-1 {
+  width: 8.3%;
+}
+
+.column-2 {
+  width: 16.6%;
+}
+
+.column-3 {
+  width: 25%;
+}
+
+.column-4 {
+  width: 33%;
+}
+
+.column-5 {
+  width: 41.6%;
+}
+
+.column-6 {
+  width: 50%;
+}
+
+.column-7 {
+  width: 58.3%;
+}
+
+.column-8 {
+  width: 66.6%;
+}
+
+.column-9 {
+  width: 66.6%;
+}
+
+.column-10 {
+  width: 83.3%;
+}
+
+.clearfix {
+  clear: both;
+}
+
+@media (max-width: 960px) {
+  .mob-non {
+    width: 0;
+    height: 0;
+    display: none;
+    position: absolute;
+  }
+
+  .mob-3 {
+    width: 25%;
+  }
+  .mob-7 {
+    width: 58.3%;
+  }
+
+  .mob-8 {
+    width: 66.6%;
+  }
+
+  .enemy_bg {
+    left: -310px;
+  }
+}

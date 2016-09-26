@@ -1,0 +1,10 @@
+.action-button {
+  font-family: 'Oswald', sans-serif;
+  width: 100%;
+  height: 80px;
+  background-color: #ECF3FF;
+  border-radius: 40px;
+  color: #164038;
+  line-height: 80px;
+  cursor: pointer;
+}

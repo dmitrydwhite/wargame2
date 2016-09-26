@@ -1,0 +1,27 @@
+.strength-circle {
+  background-color: #ECF3FF;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.strength-text {
+  margin: 0;
+  line-height: 80px;
+  font-family: 'Oswald', sans-serif;
+  color: #164038;
+}
+
+.label-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  height: 80px;
+  line-height: 80px;
+  color: #164038;
+  opacity: 0.5;
+}
