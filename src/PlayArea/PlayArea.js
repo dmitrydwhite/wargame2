@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 // Import Styling
 import './PlayArea.css';
 
+// Import subordinate Component
 import StrengthCircle from '../StrengthCircle/StrengthCircle.js';
 
 
@@ -24,18 +25,34 @@ class PlayArea extends Component {
     return extrasMarkup;
   }
 
+  calculateWinners() {
+    var computerCardVal = this.props.display.computer.value || 0;
+    var userCardVal = this.props.display.user.value || 0;
+    var ret = {
+      user: false,
+      computer: false
+    };
+
+    ret.user = userCardVal > computerCardVal;
+    ret.computer = computerCardVal > userCardVal;
+
+    return ret;
+  }
+
   render() {
-    var extras = this.showExtras(this.props.display.extra);
+    var display = this.props.display;
+    var extras = this.showExtras(display.extra);
+    var winner = this.calculateWinners();
 
     return (
       <div className="play-area" >
         <div className="card-display computer">
-          <StrengthCircle value={this.props.display.computer.name} />
-          {extras}
+          <StrengthCircle value={this.props.display.computer.name} winner={winner.computer} />
+          <div className="extra-cards">{extras}</div>
         </div>
         <div className="card-display user">
-          <StrengthCircle value={this.props.display.user.name} />
-          {extras}
+          <div className="extra-cards">{extras}</div>
+          <StrengthCircle value={this.props.display.user.name} winner={winner.user} />
         </div>
       </div>
     )

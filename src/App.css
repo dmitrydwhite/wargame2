@@ -18,9 +18,15 @@
 
 @media (max-width: 960px) {
   .play-space {
+    width: 500px;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+  }
+}
+
+@media (max-width: 540px) {
+  .play-space {
     width: 340px;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -243,8 +249,6 @@
   top: calc(-684px + (75vh / 2));
 }
 
-
-
 .row-12 {
   max-width: 100%;
   padding: 0;
@@ -320,6 +324,10 @@
     position: absolute;
   }
 
+  .mob-bottom-btn {
+    display: none;
+  }
+
   .mob-3 {
     width: 25%;
   }
@@ -331,6 +339,12 @@
     width: 66.6%;
   }
 
+  .enemy_bg {
+    left: -230px;
+  }
+}
+
+@media (max-width: 540px) {
   .enemy_bg {
     left: -310px;
   }

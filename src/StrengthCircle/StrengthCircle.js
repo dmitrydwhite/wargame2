@@ -14,8 +14,11 @@ class StrengthCircle extends Component {
       <p className="label-text">{this.props.label}</p> :
       '';
 
+    var classString = 'strength-circle';
+    classString += this.props.winner ? ' winner' : '';
+
     return (
-      <div className="strength-circle column-1">
+      <div className={classString} >
         <p className="strength-text">{this.props.value}</p>
         {labelText}
       </div>

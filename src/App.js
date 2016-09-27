@@ -15,7 +15,9 @@ import GameDash from './GameDash/GameDash.js';
 import HeaderBar from './HeaderBar/HeaderBar.js';
 import PlayArea from './PlayArea/PlayArea.js';
 
-
+/**
+ * The central App Component
+ */
 var App = React.createClass({
   getInitialState() {
     var stateObject;
@@ -88,11 +90,9 @@ var App = React.createClass({
           extra: (gameObj.cardsInPlay.length / 2) - 2
         }
       };
-
-      if (turnIsDecided) {
-        stateObject.turnWinner = gameObj.result.winner;      
-      }
     }
+
+    stateObject.turnWinner = gameObj.result.winner;      
 
     this.setState(stateObject);
   },
@@ -101,24 +101,29 @@ var App = React.createClass({
     var buttonType;
     var enemyHasClass = 'enemy_bg enemy-has-';
 
-
-    if (this.state.waitingForPlay) {
+    if (this.game.gameState !== 0) {
+      buttonType = 'resetGame';
+    } else if (this.state.waitingForPlay) {
       buttonType = 'play';
     } else if (this.state.needUserAck) {
       buttonType = 'ackResult';
     } else if (this.state.turnIsTied) {
       buttonType = 'resolveTie';
-    } else if (this.game.gameState === 0) {
-      buttonType = 'resetGame';
     }
 
-    enemyHasClass = this.calculateEnemyClass.call(this, enemyHasClass);
+    enemyHasClass = this.calculateEnemyClass(enemyHasClass);
 
     return (
-      <div className="App row-12">
+      <div className="App">
         <HeaderBar />
-        <div className=" play-space">
-          <GameDash type="computer" status={this.state.players.computer} display={this.state.displayCards} />
+        <div className="play-space">
+          <GameDash 
+            type="computer" 
+            status={this.state.players.computer} 
+            display={this.state.displayCards} 
+            winner={this.state.turnWinner}
+          />
+        {/** <GameInfoArea display={!this.state.game.inProgress} /> */}
           <PlayArea display={this.state.displayCards} />
           <GameDash 
             type="user"
@@ -128,7 +133,7 @@ var App = React.createClass({
             buttonType={buttonType}
             winner={this.state.turnWinner}
           />
-          <img src={enemy_bg} className={enemyHasClass} ref="enemyBg" role="presentation" />
+          <img src={enemy_bg} className={enemyHasClass} role="presentation" />
         </div>
 
         <div className="clearfix"></div>

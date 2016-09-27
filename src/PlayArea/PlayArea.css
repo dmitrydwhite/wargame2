@@ -5,14 +5,14 @@
 
 .card-display {
   position: relative;
-  width: 100%;
+  width: 80px;
 }
 
 .card-display.computer {
   position: absolute;
   top: calc(33% - 40px);
   z-index: 105;
-  margin-left: calc(33% - 40px);
+  left: calc(33% - 40px);
 }
 
 .card-display.user {
@@ -22,14 +22,29 @@
   right: calc(33% - 40px);
 }
 
-.card-display.user > div {
-  float: right;
-}
-
 .extra-card {
   height: 40px;
   width: 40px;
   background-color: #ECF3FF;
   border-radius: 50%;
   float: left;
+}
+
+.user .extra-card {
+  float: right;
+}
+
+.extra-cards {
+  position: absolute;
+  width: 350%;
+}
+
+.computer > .extra-cards {
+  top: calc(33% - 20px);
+  left: calc(33% + 60px);
+}
+
+.user > .extra-cards {
+  top: calc(66% - 20px);
+  right: calc(33% + 60px);
 }

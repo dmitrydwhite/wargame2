@@ -1,9 +1,28 @@
+@keyframes cardWinner {
+  from {
+    background-color: #FD81AA;
+    border: -2px solid #FFFFFF;
+  }
+
+  to {
+    background-color: #ECF3FF;
+    border: 0;
+  }
+}
+
 .strength-circle {
   background-color: #ECF3FF;
   height: 80px;
   width: 80px;
   border-radius: 50%;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.strength-circle.winner {
+  animation-name: cardWinner;
+  animation-duration: 1.5s;
 }
 
 .strength-text {
