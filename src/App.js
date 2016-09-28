@@ -6,7 +6,7 @@ import './App.css';
 
 // Import image asset and its styling
 import enemy_bg from './assets/enemy_bg.svg';
-import 'enemy_bg.css';
+import './assets/enemy_bg.css';
 
 // Import game engine library
 import WarGame from './lib/WarCardGame.js';
