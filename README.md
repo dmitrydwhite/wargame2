@@ -1,18 +1,27 @@
 # Wargame2
 
-A rendition of the classic card game "War"
+#### A rendition of the classic card game "War"
 
 by Dmitry White
 
 #### Development Notes
 
 ##### Getting started
-I built this using the utility `create-react-app`, as I have not fully completed a React app yet and am still learning about the ins and outs of building with React.
+I built this using the utility [`create-react-app`](https://github.com/facebookincubator/create-react-app), as I have not fully completed a React app yet and am still learning about the ins and outs of getting React set up.
 
 ##### Building
-This project is currently not hosted online, as it is still under a certain level of construction.  To view the app, clone the project and run `npm start`.  This will start a local server on port 3000 running the app.
+This project is currently hosted on heroku at:
+
+https://wargame2.herokuapp.com/
+
+Build to heroku is enabled by [mars]'s [`create-react-app-buildpack`](https://github.com/mars/create-react-app-buildpack).
+
+##### Data Integration
+I have wanted to integrate a project into Firebase for a while.  I figured that since this is basically a clicking game that generates a lot of data, this would be a good opportunity.  The Firebase database is [here](https://console.firebase.google.com/project/war-card-game-project/database/data), and can be accessed with the credentials `wargameaccess99@gmail.com / WARgame99`.
 
 ##### Code notes
+Source code is available on Github [here](https://github.com/dmitrydwhite/wargame2).
+
 I wrote or modified all the code in the `/src` folder with the exception of `favicon.ico` and `index.js`.  I also hand-wrote the `svg` in `/assets`.
 
 ##### The game engine API

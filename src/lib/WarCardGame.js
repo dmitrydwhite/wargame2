@@ -40,11 +40,6 @@ class WarGame {
    * @return {Object} - An object describing the state of the turn.
    */
   playOutCards(cards) {
-    if (!cards) {
-      console.log('beginning next turn');
-    } else {
-      console.log('playing out cards because of tie');
-    }
     var turnObj = this.inProgressTurn || {
       ties: 0,
       cardsInPlay: []
