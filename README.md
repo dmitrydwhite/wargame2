@@ -14,7 +14,10 @@ This project is currently hosted on heroku at:
 
 https://wargame2.herokuapp.com/
 
-Build to heroku is enabled by [mars]'s [`create-react-app-buildpack`](https://github.com/mars/create-react-app-buildpack).
+Build to heroku is enabled by [mars](https://github.com/mars)'s [`create-react-app-buildpack`](https://github.com/mars/create-react-app-buildpack).
+
+##### Testing
+`create-react-app` auto-integrates Jest, which I have not used before.  Each React component has a smoke-test for both deep and shallow renders.
 
 ##### Data Integration
 I have wanted to integrate a project into Firebase for a while.  I figured that since this is basically a clicking game that generates a lot of data, this would be a good opportunity.  The Firebase database is [here](https://console.firebase.google.com/project/war-card-game-project/database/data), and can be accessed with the credentials `wargameaccess99@gmail.com / WARgame99`.
@@ -22,7 +25,7 @@ I have wanted to integrate a project into Firebase for a while.  I figured that 
 ##### Code notes
 Source code is available on Github [here](https://github.com/dmitrydwhite/wargame2).
 
-I wrote or modified all the code in the `/src` folder with the exception of `favicon.ico` and `index.js`.  I also hand-wrote the `svg` in `/assets`.
+I wrote or modified all the code in the `/src` folder with the exception of `favicon.ico` and `index.js`.
 
 ##### The game engine API
 I wrote JS classes for card and deck, and used those to build a game engine for the game of war.

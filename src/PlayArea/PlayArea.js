@@ -11,6 +11,7 @@ import StrengthCircle from '../StrengthCircle/StrengthCircle.js';
 /**
  * PlayArea Component
  * @extends {Component}
+ * @prop {Object} display - The object describing the cards in play.
  */
 class PlayArea extends Component {
   showExtras(count) {
@@ -25,6 +26,10 @@ class PlayArea extends Component {
     return extrasMarkup;
   }
 
+  /**
+   * Determines if the user is the winner or the loser.
+   * @return {Object} With two props. `user` and `computer`; the winner will have the value `true`.
+   */
   calculateWinners() {
     var computerCardVal = this.props.display.computer.value || 0;
     var userCardVal = this.props.display.user.value || 0;
@@ -39,6 +44,10 @@ class PlayArea extends Component {
     return ret;
   }
 
+  /**
+   * Render the template
+   * @return {JSX}
+   */
   render() {
     var display = this.props.display;
     var extras = this.showExtras(display.extra);

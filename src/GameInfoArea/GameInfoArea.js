@@ -1,9 +1,21 @@
 // Import dependencies
 import React, { Component } from 'react';
 
+// Import Component styling
 import './GameInfoArea.css';
 
+/**
+ * GameInfoArea Component
+ * @prop {Array} losers
+ * @prop {Boolean} display
+ * @prop {String} gameId
+ * @prop {Function} restart
+ */
 class GameInfoArea extends Component {
+  /**
+   * Render the template
+   * @return {JSX}
+   */  
   render() {
     var wonLost = this.props.losers.indexOf('user') === -1 ? 'WON' : 'LOST';
     var renderJsx;

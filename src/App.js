@@ -4,13 +4,14 @@ import React from 'react';
 // Import stylesheet
 import './App.css';
 
-// Import image asset
-import enemy_bg from '../assets/enemy_bg.svg';
+// Import image asset and its styling
+import enemy_bg from './assets/enemy_bg.svg';
+import 'enemy_bg.css';
 
 // Import game engine library
 import WarGame from './lib/WarCardGame.js';
 
-// Import Components
+// Import Sub-Components
 import GameDash from './GameDash/GameDash.js';
 import HeaderBar from './HeaderBar/HeaderBar.js';
 import PlayArea from './PlayArea/PlayArea.js';
@@ -47,10 +48,17 @@ var App = React.createClass({
     return stateObject;
   },
 
+  /**
+   * Resets the game from within the app.
+   */
   resetGame() {
     this.setState(this.getInitialState());
   },
 
+  /**
+   * Starts new game, used to set initial and subsequent states.
+   * @return {Object} The `game` portion of the state object.
+   */
   startNewGame() {
     var thisGame = new WarGame();
 
@@ -71,6 +79,12 @@ var App = React.createClass({
     return thisGame;
   },
 
+  /**
+   * Helper method to determine the position of the background indicating the relative strength of the
+   * computer (enemy).
+   * @param  {String} baseString - The base class for the background.
+   * @return {[type]}            - The full class string for the background.
+   */
   calculateEnemyClass(baseString) {
     var reserve = this.state.players.computer.reserve.length;
     var discard = this.state.players.computer.discard.length;
@@ -83,6 +97,11 @@ var App = React.createClass({
     return baseString + totalCards;
   },
 
+  /**
+   * The main switchboard of the game. Updates the game engine based on the passed action, and updates
+   * the state accordingly.
+   * @param  {String} action - A string indicating the action the user just performed by clicking the button.
+   */
   gameSwitch(action) {
     var actionMap = {
       play: this.game.playOutCards.bind(this.game),
@@ -130,6 +149,10 @@ var App = React.createClass({
     this.setState(stateObject);
   },
 
+  /**
+   * Render the template
+   * @return {JSX}
+   */
   render() {
     var enemyHasClass = 'enemy_bg enemy-has-';
     var buttonType;

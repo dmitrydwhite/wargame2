@@ -9,6 +9,10 @@ import './HeaderBar.css';
  * @extends {Component}
  */
 class HeaderBar extends Component {
+  /**
+   * Render the template
+   * @return {JSX}
+   */  
   render() {
     return (
       <div className="header-bar row-12">

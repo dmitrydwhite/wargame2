@@ -6,8 +6,16 @@ import './ButtonArea.css';
 
 /**
  * ButtonArea Component
+ * @prop {String} winner
+ * @prop {String} type
+ * @prop {String} buttonType
+ * @prop {Function} onClick
  */
 class ButtonArea extends Component {
+  /**
+   * Render the template
+   * @return {JSX}
+   */
   render() {
     var btnDisplay = {
       computer: 'none',

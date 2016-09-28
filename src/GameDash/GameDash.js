@@ -10,12 +10,23 @@ import StrengthCircle from '../StrengthCircle/StrengthCircle.js';
 
 /**
  * GameDash Component
+ * @prop {Function} gameSwitch
+ * @prop {Object} status - Expects props `reserve: {Array}` and `discard: {Array}`
+ * @prop {String} buttonType
  */
 class GameDash extends Component {
+  /**
+   * Invokes the gameSwitch function with this Component's buttonType
+   */
   dispatchClick() {
+    console.log('' + this.props.gameSwitch);
     this.props.gameSwitch(this.props.buttonType);
   }
 
+  /**
+   * Render the template
+   * @return {JSX}
+   */
   render() {
     return (
       <div className="game-dash" >
