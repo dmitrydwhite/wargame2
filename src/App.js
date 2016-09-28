@@ -14,6 +14,11 @@ import WarGame from './lib/WarCardGame.js';
 import GameDash from './GameDash/GameDash.js';
 import HeaderBar from './HeaderBar/HeaderBar.js';
 import PlayArea from './PlayArea/PlayArea.js';
+import GameInfoArea from './GameInfoArea/GameInfoArea.js';
+
+// Import Firebase
+import firebase from './lib/vendor.firebase.js';
+
 
 /**
  * The central App Component
@@ -22,6 +27,7 @@ var App = React.createClass({
   getInitialState() {
     var stateObject;
 
+    this.gameDataPath = '/games';
     this.game = this.startNewGame();
     stateObject = this.game;
 
@@ -32,6 +38,7 @@ var App = React.createClass({
     };
 
     this.game.turns = [];
+    this.game.inProgress = true;
 
     stateObject.waitingForPlay = true;
     stateObject.turnIsTied = false;
@@ -40,8 +47,28 @@ var App = React.createClass({
     return stateObject;
   },
 
+  resetGame() {
+    this.setState(this.getInitialState());
+  },
+
   startNewGame() {
-    return new WarGame();
+    var thisGame = new WarGame();
+
+    var playersObj = thisGame.players;
+
+    var baseLineGameInfo = {
+      gameStart: Date.now(),
+      players: playersObj,
+      deck: thisGame.deck
+    };
+
+    this.gameDataPath += '/' + thisGame.gameId.toString() + '/';
+
+    firebase.database()
+      .ref(this.gameDataPath + thisGame.gameTurn.toString())
+      .set(baseLineGameInfo);
+
+    return thisGame;
   },
 
   calculateEnemyClass(baseString) {
@@ -90,6 +117,12 @@ var App = React.createClass({
           extra: (gameObj.cardsInPlay.length / 2) - 2
         }
       };
+
+      if (turnIsDecided) {
+        firebase.database()
+          .ref(this.gameDataPath + this.game.gameTurn.toString())
+          .set(gameObj);
+      }
     }
 
     stateObject.turnWinner = gameObj.result.winner;      
@@ -98,11 +131,12 @@ var App = React.createClass({
   },
 
   render() {
-    var buttonType;
     var enemyHasClass = 'enemy_bg enemy-has-';
+    var buttonType;
 
     if (this.game.gameState !== 0) {
-      buttonType = 'resetGame';
+      // buttonType = 'resetGame';
+      this.game.inProgress = false;
     } else if (this.state.waitingForPlay) {
       buttonType = 'play';
     } else if (this.state.needUserAck) {
@@ -123,7 +157,12 @@ var App = React.createClass({
             display={this.state.displayCards} 
             winner={this.state.turnWinner}
           />
-        {/** <GameInfoArea display={!this.state.game.inProgress} /> */}
+          <GameInfoArea 
+            display={!this.game.inProgress}
+            restart={this.resetGame}
+            gameId={this.game.gameId}
+            losers={this.game.losingPlayers}
+          />
           <PlayArea display={this.state.displayCards} />
           <GameDash 
             type="user"

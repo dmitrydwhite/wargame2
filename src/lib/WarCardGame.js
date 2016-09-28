@@ -53,6 +53,8 @@ class WarGame {
     var tiedPlayers = [];
     var winner;
 
+    this.gameTurn += this.inProgressTurn ? 0 : 1;
+
     for (let player in this.players) {
       if (this.players.hasOwnProperty(player)) {
         let playersCard;
@@ -84,13 +86,13 @@ class WarGame {
         turnObj[player] = turnObj[player] || {};
 
         turnObj[player].card = playersCard;
-        turnObj[player].card.name = playersCard.getName();
-        turnObj[player].card.value = playersCard.getValue();
+        turnObj[player].card.name = playersCard.name;
+        turnObj[player].card.value = playersCard.value;
 
-        if (playersCard.getValue() > winningCardValue) {
+        if (playersCard.value > winningCardValue) {
           winner = player;
-          winningCardValue = playersCard.getValue();
-        } else if (playersCard.getValue() === winningCardValue) {
+          winningCardValue = playersCard.value;
+        } else if (playersCard.value === winningCardValue) {
           winner = 'tie';
 
           if (tiedPlayers.length) {
@@ -124,7 +126,7 @@ class WarGame {
 
 
     if (this.players[winner]) {
-      this.gameTurn += 1;
+      // this.gameTurn += 1;
       turn.turnIndex = this.gameTurn;
 
       this.players[winner].discard = this.players[winner].discard.concat(turn.cardsInPlay);

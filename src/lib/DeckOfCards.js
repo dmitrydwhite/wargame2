@@ -13,24 +13,14 @@ const getRandomInt = function (min, max) {
  */
 class Card {
   /**
-   * Create a card with protected getters for name and value.
+   * Create a card with name and value.
    * @param  {String} name  The display name of the card.
    * @param  {Number} value The value of the card.
-   * @return {Card} - An instance of the class with methods for accessing name and value.
+   * @return {Card} - An instance of the class with name and value.
    */
   constructor(name, value) {
-    var getName = function () {
-      return name;
-    }
-
-    var getValue = function () {
-      return value;
-    }
-
-    return {
-      getName,
-      getValue
-    }
+    this.name = name;
+    this.value = value;
   }
 }
 

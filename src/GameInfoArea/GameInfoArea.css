@@ -1,0 +1,22 @@
+.game-info {
+  position: absolute;
+  z-index: 200;
+  height: 240px;
+  background-color: #ECF3FF;
+  width: 240px;
+  border-radius: 50%;
+  border: 1px solid #164038;
+  right: calc(50% - 120px);
+  top: calc(50% - 120px);
+  font-family: 'Oswald', sans-serif;
+}
+
+.game-info-text {
+  position: absolute;
+  top: calc(50% - 64px);
+}
+
+.action-btn {
+  text-decoration: underline;
+  cursor: pointer;
+}
